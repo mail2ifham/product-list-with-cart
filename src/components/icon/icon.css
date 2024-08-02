@@ -1,0 +1,37 @@
+.plus-icon,
+.minus-icon {
+  fill: var(--Rose-50);
+  background-color: var(--Red);
+  padding: 3px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.plus-icon:hover,
+.minus-icon:hover{
+    fill: var(--Red);
+    background-color: var(--Rose-50);
+}
+
+.remove-icon{
+  fill: var(--Rose-400);
+  padding: 3px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--Rose-400);
+  border-radius: 50%;
+  align-self: center;
+  margin-left: auto;
+  
+  
+}
+
+.remove-icon:hover{
+  cursor: pointer;
+  border: 1px solid var(--Rose-900);
+fill: var(--Rose-900);
+
+}
+
