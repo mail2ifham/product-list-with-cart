@@ -9,8 +9,6 @@ function Card({
   itemImage,
   cartItems,
   setCartItems,
-  sa,
-  setSa
 }) {
   return (
     <div className="card">
@@ -28,8 +26,6 @@ function Card({
           setCartItems={setCartItems}
           itemName={itemName}
           itemPrice={itemPrice}
-          sa={sa}
-          setSa={setSa}
         />
       </div>
       <p className="dessert-category">{itemCategory}</p>

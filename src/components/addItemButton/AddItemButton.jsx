@@ -9,11 +9,7 @@ function AddItemButton({
   itemPrice,
   cartItems,
   setCartItems,
-  sa,
-  setSa,
 }) {
-  // const [isAddToCartButtonClicked, setIsAddToCartButtonClicked] =
-  //   useState('');
   const [qty, setQty] = useState(1);
 
   const obj = {
@@ -24,7 +20,6 @@ function AddItemButton({
 
   function handleAddToCartButton() {
     setQty(1);
-    // setIsAddToCartButtonClicked(itemName);
     setSa([...sa, itemName]);
     setCartItems([...cartItems, obj]);
   }
@@ -46,24 +41,19 @@ function AddItemButton({
         )
         .filter((c) => c.itemQty !== 0)
     );
-    // qty === 0 && setSa([]);
   }, [qty]);
-
-  useEffect(() => {
-    console.log(sa);
-  }, [sa]);
 
   return (
     <div
       className={
-        sa.length > 0 && sa.includes(itemName)
+        cartItems.length > 0 && cartItems.some(item=> item.itemName === itemName)
           ? "add-to-cart-container background-color"
           : "add-to-cart-container  "
       }
     >
       <div
         className={
-          sa.length > 0 && sa.includes(itemName)
+          cartItems.length > 0 && cartItems.some(item=> item.itemName === itemName)
             ? " add-to-cart display-none"
             : " add-to-cart "
         }
@@ -74,8 +64,8 @@ function AddItemButton({
       </div>
       <div
         className={
-          sa.includes(itemName)
-            ? "item-selected "
+          cartItems.some(item=> item.itemName === itemName)
+            ? "item-selected  "
             : "item-selected display-none "
         }
       >

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./cardView.css";
 import Card from "../card/Card";
 
-function CardView({ data,cartItems, setCartItems,sa ,setSa  }) {
+function CardView({ data,cartItems, setCartItems }) {
 
  return (
     <div className="card-view-container">
@@ -17,8 +17,6 @@ function CardView({ data,cartItems, setCartItems,sa ,setSa  }) {
             itemImage={item.image}
             cartItems={cartItems}
             setCartItems={setCartItems}
-            sa={sa}
-            setSa={setSa}
           />
         ))}
       </div>
