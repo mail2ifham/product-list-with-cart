@@ -3,18 +3,21 @@ import "./cart.css";
 import RemoveItemIcon from "../icon/RemoveItemIcon";
 import carbonNeutralIcon from "../../assets/images/icon-carbon-neutral.svg";
 
-function Cart({ cartItems, removeItem }) {
+function Cart({ cartItems, removeItem, SetOrderConfirmation }) {
   const [totalQty, setTotalQty] = useState(0);
-
-
-
+  let totalPrice = 0;
 
   useEffect(() => {
-  }, []);
+    setTotalQty(
+      cartItems.reduce((sum, cartItem) => {
+        return sum + cartItem.itemQty;
+      }, 0)
+    );
+  }, [cartItems]);
 
   return (
     <div className="cart-container">
-      <h2>Your Cart({totalQty && totalQty})</h2>
+      <h2>Your Cart({totalQty})</h2>
       {cartItems.length <= 0 && (
         <div className="empty-cart">
           <img src="src/assets/images/illustration-empty-cart.svg" />
@@ -25,6 +28,7 @@ function Cart({ cartItems, removeItem }) {
         <ul className="item-list">
           {cartItems.length >= 0 &&
             cartItems.map((cartItem, i) => {
+              totalPrice += cartItem.itemPrice * cartItem.itemQty;
               return (
                 <li key={i}>
                   <div className="item-container">
@@ -41,19 +45,30 @@ function Cart({ cartItems, removeItem }) {
                       </p>
                     </div>
                   </div>
-                  <RemoveItemIcon removeItem={removeItem}  removeItemName={cartItem.itemName}/>
+                  <RemoveItemIcon
+                    removeItem={removeItem}
+                    removeItemName={cartItem.itemName}
+                  />
                 </li>
               );
             })}
         </ul>
-        <p>
-          Order Total <span>$46.50</span>
-        </p>
-        <img src={carbonNeutralIcon} alt="" />
-        <p>
-          This is a <strong>carbon-neutral</strong> delivery
-        </p>
-        <button>Confirm Order</button>
+        <div className="total">
+          <p>Order Total</p> <strong>{`$${totalPrice.toFixed(2)}`}</strong>
+        </div>
+        <div className="carbon-neutral">
+          <img src={carbonNeutralIcon} alt="" />
+          <p>
+            This is a <strong>carbon-neutral</strong> delivery
+          </p>
+        </div>
+        <button
+          disabled={cartItems.length <= 0}
+          className="confirm-button"
+          onClick={() => SetOrderConfirmation(true)}
+        >
+          Confirm Order
+        </button>
       </div>
     </div>
   );

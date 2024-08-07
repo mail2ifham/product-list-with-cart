@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, {useState, useEffect } from "react";
 import "./addItemButton.css";
 import PlusIcon from "../icon/PlusIcon";
 import MinusIcon from "../icon/MinusIcon";
@@ -9,10 +9,12 @@ function AddItemButton({
   itemPrice,
   cartItems,
   setCartItems,
+  itemThumbnail,
 }) {
   const [qty, setQty] = useState(1);
 
   const obj = {
+    itemThumbnail: itemThumbnail,
     itemName,
     itemPrice,
     itemQty: 1,
@@ -20,7 +22,6 @@ function AddItemButton({
 
   function handleAddToCartButton() {
     setQty(1);
-    setSa([...sa, itemName]);
     setCartItems([...cartItems, obj]);
   }
 
@@ -46,14 +47,16 @@ function AddItemButton({
   return (
     <div
       className={
-        cartItems.length > 0 && cartItems.some(item=> item.itemName === itemName)
+        cartItems.length > 0 &&
+        cartItems.some((item) => item.itemName === itemName)
           ? "add-to-cart-container background-color"
           : "add-to-cart-container  "
       }
     >
       <div
         className={
-          cartItems.length > 0 && cartItems.some(item=> item.itemName === itemName)
+          cartItems.length > 0 &&
+          cartItems.some((item) => item.itemName === itemName)
             ? " add-to-cart display-none"
             : " add-to-cart "
         }
@@ -64,7 +67,7 @@ function AddItemButton({
       </div>
       <div
         className={
-          cartItems.some(item=> item.itemName === itemName)
+          cartItems.some((item) => item.itemName === itemName)
             ? "item-selected  "
             : "item-selected display-none "
         }
@@ -78,7 +81,3 @@ function AddItemButton({
 }
 
 export default AddItemButton;
-
-// className={`add-to-cart ${
-//   sa.length > 0 && sa.find((s) => s === itemName) && "display-none"
-// }`}

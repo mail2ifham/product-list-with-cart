@@ -2,9 +2,10 @@ import "./icon.css";
 
 import React from "react";
 
-function PlusIcon({handlePlus}) {
+function PlusIcon({ handlePlus }) {
   return (
-    <svg onClick={handlePlus}
+    <svg
+      onClick={handlePlus}
       className="plus-icon"
       xmlns="http://www.w3.org/2000/svg"
       width="10"

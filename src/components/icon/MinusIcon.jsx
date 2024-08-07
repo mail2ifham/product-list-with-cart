@@ -1,9 +1,7 @@
-function MinusIcon({handleMinus}) {
-
-
-
+function MinusIcon({ handleMinus }) {
   return (
-    <svg onClick={handleMinus}
+    <svg
+      onClick={handleMinus}
       className="minus-icon"
       xmlns="http://www.w3.org/2000/svg"
       width="10"

@@ -32,7 +32,7 @@ ul li {
   list-style: none;
   display: flex;
   justify-content: start;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid var(--Rose-100);
 }
 
 .item-container {
@@ -51,7 +51,11 @@ ul li {
 
 .item-container div > p {
   padding-right: 15px;
-  color: var(--Rose-400);
+  color: var(--Rose-500);
+}
+.item-container div > p:first-of-type{
+
+  color: var(--Red);
 }
 
 .item-list img:hover {
@@ -60,6 +64,52 @@ ul li {
   width: 14px;
   color: var(--Rose-900);
 }
+
+.total{
+  font-size: .9rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: start;
+  align-items: center; 
+  padding: 25px 0;
+}
+.total strong {
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-left: auto ;
+}
+
+.carbon-neutral{
+  font-size: .8rem;
+
+
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 15px 25px;
+  background-color: var(--Rose-100);
+
+}
+.carbon-neutral img {
+  padding-right: 8px;
+}
+
+.confirm-button{
+padding: 15px;
+border: none;
+width: 100%;
+border-radius: 100px;
+font-size: .8rem;
+margin-top: 15px;
+background-color: var(--Red);
+color: var(--Rose-50);
+}
+
+.confirm-button:hover{
+  cursor: pointer;
+  background-color: hsl(14, 82%, 35%);
+}
+
 
 @media (min-width: 427px) and (max-width: 768px) {
 }

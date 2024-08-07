@@ -2,31 +2,36 @@
 .card {
     padding-top:28px ;
     position: relative;
-}
+  }
+  
+  .card picture img {
+    width: 100%;
+    border-radius: 10px;
 
-.card picture img {
-  width: 100%;
-  border-radius: 10px;
-}
+  }
 
-.dessert-category {
-  font-size: .8rem;
-  color: var(--Rose-500);
-}
-
-.dessert-name {
-  padding: 2px 0;
-  font-size: .85rem;
-  font-weight: 700;
-  color: var(--Rose-900);
-}
-
-.dessert-price{
-  color: var(--Red);
-  font-size: .85rem;
-  font-weight: 600;
-}
-.add-to-button{
+  .card-border{
+    border: 2px solid var(--Red);
+  }
+  
+  .dessert-category {
+    font-size: .8rem;
+    color: var(--Rose-500);
+  }
+  
+  .dessert-name {
+    padding: 2px 0;
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--Rose-900);
+  }
+  
+  .dessert-price{
+    color: var(--Red);
+    font-size: .85rem;
+    font-weight: 600;
+  }
+  .add-to-button{
   position: relative;
   bottom: 24px;
   height: max-content;
