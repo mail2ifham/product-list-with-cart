@@ -13,7 +13,7 @@ function Card({
   return (
     <div className="card">
       <picture>
-        <source media="(min-width: 768px)" srcSet={`../src/assets/images/${itemImage.desktop}`} />
+        <source media="(min-width: 768px)" srcSet={itemImage.desktop} />
         <source
           media="(min-width: 427px) and (max-width: 768px)"
           srcSet={itemImage.tablet}
